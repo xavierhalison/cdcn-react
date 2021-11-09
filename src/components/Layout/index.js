@@ -1,4 +1,4 @@
-import { RootContext } from "context/context";
+import { RootContext } from "../../context/context";
 import { useContext } from "react";
 import { Container, Content, Header, Title } from "./style";
 import { Menu } from "react-feather";

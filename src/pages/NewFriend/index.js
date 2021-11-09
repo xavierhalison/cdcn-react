@@ -1,5 +1,5 @@
-import { MainCta } from "components/common/cta";
-import { FormGroup, Input, Label, TextBox } from "components/common/form";
+import { MainCta } from "../../components/common/cta";
+import { FormGroup, Input, Label, TextBox } from "../../components/common/form";
 import { useNavigate } from "react-router";
 import { Container } from "./style";
 

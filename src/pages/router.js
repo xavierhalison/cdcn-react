@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Main from "pages/Main";
-import NewGift from "pages/NewGift";
-import NewFriend from "pages/NewFriend";
+import Main from "./Main";
+import NewGift from "./NewGift";
+import NewFriend from "./NewFriend";
 
 export default function App() {
   return (

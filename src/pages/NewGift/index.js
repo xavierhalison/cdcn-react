@@ -1,11 +1,10 @@
-import { MainCta } from "components/common/cta";
-import { FormGroup, Input, Label, TextBox } from "components/common/form";
+import { MainCta } from "../../components/common/cta";
+import { FormGroup, Input, Label, TextBox } from "../../components/common/form";
 import { useNavigate, useParams } from "react-router";
 import { Container } from "./style";
 import { useContext } from "react";
-import { RootContext } from "context/context";
-import { useEffect } from "react/cjs/react.development";
-import { useState } from "react";
+import { RootContext } from "../../context/context";
+import { useState, useEffect } from "react";
 
 function NewGift() {
   const { setTitle, gifts, setGifts } = useContext(RootContext);

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { MainCta } from "components/common/cta";
+import { MainCta } from "../../components/common/cta";
 import {
   Container,
   EmptyImg,
@@ -9,10 +9,9 @@ import {
   ActionsMenu,
   Action,
 } from "./style";
-import emptyState from "assets/empty.png";
-import { RootContext } from "context/context";
+import { RootContext } from "../../context/context";
 import { Check, Edit, Layers, Trash } from "react-feather";
-import ListItem from "components/ListItem";
+import ListItem from "../../components/ListItem";
 import { useState } from "react";
 
 function Main() {
@@ -26,7 +25,7 @@ function Main() {
   });
 
   function handleRemoveGift() {
-    let toKeep = gifts.filter(({selected}) => !selected);
+    let toKeep = gifts.filter(({ selected }) => !selected);
 
     setGifts(toKeep);
   }
@@ -39,15 +38,17 @@ function Main() {
   }
 
   function handleEdit() {
-    const selected = gifts.filter(({selected}) => selected)[0];
+    const selected = gifts.filter(({ selected }) => selected)[0];
     const key = gifts.indexOf(selected);
 
     navigate(`/edit-gift/${key}`);
   }
 
   const hasGifts = !!gifts.length;
-  const hasSelectedItens = () => !!gifts.filter(({selected}) => selected).length;
-  const oneSelected = () => gifts.filter(({selected}) => selected).length === 1;
+  const hasSelectedItens = () =>
+    !!gifts.filter(({ selected }) => selected).length;
+  const oneSelected = () =>
+    gifts.filter(({ selected }) => selected).length === 1;
 
   return (
     <>
@@ -56,20 +57,11 @@ function Main() {
           <>
             <h4>Presentes</h4>
             {gifts.map(({ name, description }, key) => (
-              <>
-                {/* <div key={key}>
-                {name} - {description} -
-                <span onClick={() => navigate(`/edit-gift/${key}`)}>
-                  Editar
-                </span>{" "}
-                -<span onClick={() => handleRemoveGift(key)}>Excluir</span>
-              </div> */}
-                <ListItem
-                  key={key}
-                  name={name}
-                  onChange={(e) => selectItem(key, e.target.checked)}
-                />
-              </>
+              <ListItem
+                key={key}
+                name={name}
+                onChange={(e) => selectItem(key, e.target.checked)}
+              />
             ))}
           </>
         ) : (
